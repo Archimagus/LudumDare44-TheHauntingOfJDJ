@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eada9aa2ed8e8d447bc8bc0789ae11ea, type: 3}
+  m_Name: SiblingMemory
+  m_EditorClassIdentifier: 
+  BaseMusic: {fileID: 8300000, guid: 0a260c6d2f658724d9b02daf5b7e8773, type: 3}
+  WarpedMusic: {fileID: 8300000, guid: 00da26c611cba7e459d4d5e6547e167b, type: 3}
+  VoiceOver: {fileID: 8300000, guid: a98715b848e9efb42b3b83d9fc897081, type: 3}
+  Subtitles:
+  - Text: ' Your brother Samuel'
+    DisplayTime: 1.7
+  - Text: '...'
+    DisplayTime: 0.9
+  - Text: the poetic writer
+    DisplayTime: 1
+  - Text: ..
+    DisplayTime: 1.2
+  - Text: always drinking
+    DisplayTime: 1
+  - Text: '...'
+    DisplayTime: 2.6
+  - Text: Forget him!
+    DisplayTime: 1
+  PortraitSequence:
+  - {fileID: 2100000, guid: e16f367acdccdb146ba458bd9e2b6bb2, type: 2}
+  - {fileID: 2100000, guid: 93cfde04e52cf7e4db06302237951129, type: 2}
+  - {fileID: 2100000, guid: 2b436db62335f604fad9778d768bf43e, type: 2}
+  - {fileID: 2100000, guid: 3d8ff3d90b4866a47871cb9324b48450, type: 2}
+  - {fileID: 2100000, guid: 6e9d0730f40b8b44da7490056a37db82, type: 2}
+  MemoryStartedEvent: {fileID: 11400000, guid: ad3a84d63d231b0429054169be64c106, type: 2}
+  MemoryLeftEvent: {fileID: 11400000, guid: 13d6dedba373b6c48ba4b0d5c69ab9ed, type: 2}

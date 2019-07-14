@@ -6,7 +6,7 @@ public class MenuStack : ScriptableObject
 {
 	private GameTime _gameTime;
 	private Stack<MenuStackItem> _menus = new Stack<MenuStackItem>();
-	
+	public bool Any { get { return _menus.Any(); } }
 	private void Awake()
 	{
 		_gameTime = Resources.Load<GameTime>("GameTime");

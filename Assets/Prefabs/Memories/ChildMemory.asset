@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eada9aa2ed8e8d447bc8bc0789ae11ea, type: 3}
+  m_Name: ChildMemory
+  m_EditorClassIdentifier: 
+  BaseMusic: {fileID: 8300000, guid: f535284e41da6fd489063bececfdf100, type: 3}
+  WarpedMusic: {fileID: 8300000, guid: 1f1e3ce3642355747941dbef0eb0cb6d, type: 3}
+  VoiceOver: {fileID: 8300000, guid: de4909e431d16274fb6a895b2802ca2c, type: 3}
+  Subtitles:
+  - Text: Elizabeth
+    DisplayTime: 1.5
+  - Text: '...'
+    DisplayTime: 0.7
+  - Text: the child whom plays with toys.
+    DisplayTime: 2.4
+  - Text: '...'
+    DisplayTime: 0.75
+  - Text: Provide her belongings to me as her memory fades away.
+    DisplayTime: 5.5
+  PortraitSequence:
+  - {fileID: 2100000, guid: afe51a59bae7eee4fbf797b6f5d3ba71, type: 2}
+  - {fileID: 2100000, guid: 3e539c185f5115b4d811164359f202cc, type: 2}
+  - {fileID: 2100000, guid: e90c6f70431e95e4a9ac1210527fc72b, type: 2}
+  - {fileID: 2100000, guid: 5de2cbf81fcb1f549bf16801e265ae2c, type: 2}
+  MemoryStartedEvent: {fileID: 11400000, guid: ad3a84d63d231b0429054169be64c106, type: 2}
+  MemoryLeftEvent: {fileID: 11400000, guid: 13d6dedba373b6c48ba4b0d5c69ab9ed, type: 2}

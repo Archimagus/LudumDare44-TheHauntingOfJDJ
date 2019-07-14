@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -6,10 +7,13 @@ public class MainMenu : MonoBehaviour
 {
 	[Header("Menu Stuff")]
 	[SerializeField] private Button _quitButton = null;
+	[SerializeField] private GameObject _mainMenuPanel = null;
+	[SerializeField] private GameObject _settingPanel = null;
 
 	private GameTime _gameTime;
 	private GameData _gamedata;
 	private MenuStack _menuStack;
+	private Vector3 _lastMousePosition;
 
 	private void Awake()
 	{
@@ -25,6 +29,12 @@ public class MainMenu : MonoBehaviour
 
 		if (Application.platform == RuntimePlatform.WebGLPlayer)
 			_quitButton.gameObject.SetActive(false);
+		if (!Input.mousePresent)
+		{
+			EventSystem.current.SetSelectedGameObject(GameObject.Find("NewGameButton").gameObject);
+		}
+
+		AudioManager.PlayMusic(AudioClips.game_jam_ludum_dare_piano_nocturne_BASE);
 	}
 
 	private void Update()
@@ -35,5 +45,18 @@ public class MainMenu : MonoBehaviour
 			if(closed == 0)
 				_gamedata.QuitGame();
 		}
+		var es = EventSystem.current;
+		if (_mainMenuPanel.activeInHierarchy &&
+			((Mathf.Abs(Input.GetAxis("Vertical")) > 0.01f && es.currentSelectedGameObject == null) ||
+				(es.currentSelectedGameObject != null && es.currentSelectedGameObject.activeInHierarchy == false)))
+		{
+			es.SetSelectedGameObject(GameObject.Find("NewGameButton").gameObject);
+		}
+		if(Input.mousePosition != _lastMousePosition)
+		{
+			es.SetSelectedGameObject(null);
+		}
+		_lastMousePosition = Input.mousePosition;
+		_mainMenuPanel.SetActive(!_settingPanel.activeInHierarchy);
 	}
 }

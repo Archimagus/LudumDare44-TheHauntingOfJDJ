@@ -124,6 +124,14 @@ public static class AudioManager
 		}
 	}
 
+	public static AudioClip CurrentMusic
+	{
+		get
+		{
+			return _currentMusicSource?.clip;
+		}
+	}
+
 	private static void LoadResources()
 	{
 		Mixer = Resources.Load<AudioMixer>("Master");
@@ -147,7 +155,7 @@ public static class AudioManager
 		Mixer.SetFloat("musicVolume", MusicVolume.todB());
 		Mixer.SetFloat("dialogueVolume", DialogueVolume.todB());
 	}
-	public static void PlayMusic(AudioClips clip, float fadeTime = 1, bool sync = false)
+	public static void PlayMusic(string clip, float fadeTime = 1, bool sync = false)
 	{
 		AudioDatabase.AudioClips.TryGetValue(clip, out AudioClipData cd);
 		PlayMusic(cd?.Clip, fadeTime);
@@ -163,12 +171,20 @@ public static class AudioManager
 		if (_currentMusicSource.isPlaying)
 		{
 			_nextMusicSource.clip = clip;
-			_nextMusicSource.Play();
-
 			if (sync)
 			{
-				_nextMusicSource.timeSamples = _currentMusicSource.timeSamples;
+				if(_nextMusicSource.clip.samples > _currentMusicSource.timeSamples)
+					_nextMusicSource.timeSamples = _currentMusicSource.timeSamples;
+				else
+					_nextMusicSource.timeSamples = 0;
 			}
+			else
+			{
+				_nextMusicSource.timeSamples = 0;
+			}
+
+			_nextMusicSource.Play();
+
 
 			_fadeTime = fadeTime;
 			_fadeStartTime = Time.time;
@@ -208,7 +224,7 @@ public static class AudioManager
 		}
 	}
 
-	public static void PlaySound(this MonoBehaviour sfxSource, AudioClips clip,
+	public static void PlaySound(this MonoBehaviour sfxSource, string clip,
 		SoundType type = SoundType.Default, Vector3? location = null)
 	{
 		AudioDatabase.AudioClips.TryGetValue(clip, out AudioClipData cd);

@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using System;
 
 [CreateAssetMenu]
 public class GameData : ScriptableObject
 {
 	public SceneField MainMenuScene;
 	public SceneField GameScene;
+	public SceneField UiScene;
+	public SceneField GameOverScene;
 
 	public void LoadMainMenuScene()
 	{
@@ -15,6 +18,18 @@ public class GameData : ScriptableObject
 	public void LoadGameScene()
 	{
 		SceneManager.LoadScene(GameScene);
+	}
+	public void LoadGameOverScene()
+	{
+		SceneManager.LoadScene(GameOverScene);
+	}
+	public void EnsureUISceneLoaded()
+	{
+		var uiScene = SceneManager.GetSceneByName(UiScene);
+		if (uiScene.buildIndex == -1)
+		{
+			SceneManager.LoadScene(UiScene, LoadSceneMode.Additive);
+		}
 	}
 
 	public void QuitGame()
@@ -30,4 +45,5 @@ public class GameData : ScriptableObject
 			Application.Quit();
 		}
 	}
+
 }

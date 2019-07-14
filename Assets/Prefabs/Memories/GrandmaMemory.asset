@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eada9aa2ed8e8d447bc8bc0789ae11ea, type: 3}
+  m_Name: GrandmaMemory
+  m_EditorClassIdentifier: 
+  BaseMusic: {fileID: 8300000, guid: bdfeee458de861f4584878257f925527, type: 3}
+  WarpedMusic: {fileID: 8300000, guid: 39a51557b696e75458d2a5515291af86, type: 3}
+  VoiceOver: {fileID: 8300000, guid: f99bee25491091945bf4e7847a2089a3, type: 3}
+  Subtitles:
+  - Text: Your grandmother
+    DisplayTime: 1.6
+  - Text: '...'
+    DisplayTime: 0.8
+  - Text: the beauty queen
+    DisplayTime: 1.3
+  - Text: '...'
+    DisplayTime: 0.9
+  - Text: remember how she'd read a book and sip tea by the fire?
+    DisplayTime: 4.2
+  - Text: '...'
+    DisplayTime: 1.7
+  - Text: No more. Cast this memory
+    DisplayTime: 4.6
+  - Text: '...'
+    DisplayTime: 0.3
+  - Text: away
+    DisplayTime: 1
+  PortraitSequence:
+  - {fileID: 2100000, guid: e9a5366394a2f624c98faba736a51037, type: 2}
+  - {fileID: 2100000, guid: 5911518ccdf37e542bdf13b951b663ee, type: 2}
+  - {fileID: 2100000, guid: 2a8dfc456449ed2418b4c06d1f8aa1cd, type: 2}
+  - {fileID: 2100000, guid: 06d79072084e0e3449d3837c3b2f3ba2, type: 2}
+  - {fileID: 2100000, guid: 4865f8b0696c8cc498f5b0d33a9b09fb, type: 2}
+  MemoryStartedEvent: {fileID: 11400000, guid: ad3a84d63d231b0429054169be64c106, type: 2}
+  MemoryLeftEvent: {fileID: 11400000, guid: 13d6dedba373b6c48ba4b0d5c69ab9ed, type: 2}

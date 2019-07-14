@@ -16,5 +16,11 @@ MonoBehaviour:
     _sceneAsset: {fileID: 102900000, guid: 7d055f314454fde4cb05b90256de891a, type: 3}
     _sceneName: MainMenu
   GameScene:
-    _sceneAsset: {fileID: 102900000, guid: 2a3e6e53707c6bc42a1773469044b194, type: 3}
-    _sceneName: Game
+    _sceneAsset: {fileID: 102900000, guid: 57f9aaa5f37447d44ad2aa33ede89200, type: 3}
+    _sceneName: Dan
+  UiScene:
+    _sceneAsset: {fileID: 102900000, guid: f78c36965f91cf24d8be4f499f9c739a, type: 3}
+    _sceneName: UI
+  GameOverScene:
+    _sceneAsset: {fileID: 102900000, guid: 8117aa96b1f05cc48aedf1d186a83b69, type: 3}
+    _sceneName: GameOver

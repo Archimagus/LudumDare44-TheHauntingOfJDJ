@@ -1,14 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 public class AudioDatabase : ScriptableObject, ISerializationCallbackReceiver
 {
 	[Header("Auto Generated, Don't Change")]
 	[ReadOnly] [SerializeField] private AudioClip[] _audioClips = null;
+	[ReadOnly] [SerializeField] private string[] _clipNames = null;
 	[ReadOnly] [SerializeField] private SoundType[] _clipTypes = null;
 
-	public Dictionary<AudioClips, AudioClipData> AudioClips { get; } = new Dictionary<AudioClips, AudioClipData>();
+	public Dictionary<string, AudioClipData> AudioClips { get; } = new Dictionary<string, AudioClipData>();
 	public Dictionary<AudioClip, SoundType> ClipTypes { get; } = new Dictionary<AudioClip, SoundType>();
 
 	public void OnAfterDeserialize()
@@ -17,7 +19,7 @@ public class AudioDatabase : ScriptableObject, ISerializationCallbackReceiver
 		ClipTypes.Clear();
 		for (int i = 0; i < _audioClips.Length; i++)
 		{
-			AudioClips.Add((AudioClips)i, new AudioClipData(_audioClips[i], _clipTypes[i]));
+			AudioClips.Add(_clipNames[i], new AudioClipData(_audioClips[i], _clipTypes[i]));
 			ClipTypes.Add(_audioClips[i], _clipTypes[i]);
 		}
 	}
@@ -28,16 +30,18 @@ public class AudioDatabase : ScriptableObject, ISerializationCallbackReceiver
 		{
 			var clips = new List<AudioClip>();
 			var types = new List<SoundType>();
-			var clipsArray = System.Enum.GetValues(typeof(AudioClips));
-			if (clipsArray.Length > 0)
+			var names = new List<string>();
+			if (AudioClips.Any())
 			{
-				foreach (var c in (AudioClips[])clipsArray)
+				foreach (var c in AudioClips)
 				{
-					clips.Add(AudioClips[c].Clip);
-					types.Add(AudioClips[c].SoundType);
+					clips.Add(c.Value.Clip);
+					types.Add(c.Value.SoundType);
+					names.Add(c.Key);
 				}
 				_audioClips = clips.ToArray();
 				_clipTypes = types.ToArray();
+				_clipNames = names.ToArray();
 			}
 		}
 		catch { }

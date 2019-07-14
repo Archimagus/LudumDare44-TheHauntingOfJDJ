@@ -1,7 +1,59 @@
 // Auto Generated File, Don't Modify
-public enum AudioClips
+public static class AudioClips
 {
-	audiomissing,
-	ButtonClick,
-	ButtonHover
+	public static string fire_crackling="fire crackling";
+	public static string floor_creaks_1="floor creaks_1";
+	public static string floor_creaks_2="floor creaks_2";
+	public static string floor_creaks_3="floor creaks_3";
+	public static string floor_creaks_4="floor creaks_4";
+	public static string footstep_rug_1="footstep_rug_1";
+	public static string footstep_rug_2="footstep_rug_2";
+	public static string footstep_rug_3="footstep_rug_3";
+	public static string footstep_rug_4="footstep_rug_4";
+	public static string footstep_rug_5="footstep_rug_5";
+	public static string footstep_rug_6="footstep_rug_6";
+	public static string footstep_rug_7="footstep_rug_7";
+	public static string footstep_rug_8="footstep_rug_8";
+	public static string footstep_rug_9="footstep_rug_9";
+	public static string footstep_rug_10="footstep_rug_10";
+	public static string footstep_wood_1="footstep_wood_1";
+	public static string footstep_wood_2="footstep_wood_2";
+	public static string footstep_wood_3="footstep_wood_3";
+	public static string footstep_wood_4="footstep_wood_4";
+	public static string footstep_wood_5="footstep_wood_5";
+	public static string footstep_wood_6="footstep_wood_6";
+	public static string footstep_wood_7="footstep_wood_7";
+	public static string footstep_wood_8="footstep_wood_8";
+	public static string footstep_wood_9="footstep_wood_9";
+	public static string footstep_wood_10="footstep_wood_10";
+	public static string audiomissing="audiomissing";
+	public static string Child_Demon="Child_Demon";
+	public static string Endgame_Demon="Endgame_Demon";
+	public static string Grandmother_Demon="Grandmother_Demon";
+	public static string Introduction_Demon="Introduction_Demon";
+	public static string Sibling_Demon="Sibling_Demon";
+	public static string button_click_back="button click back";
+	public static string button_click_forward="button click forward";
+	public static string mouse_hover="mouse hover";
+	public static string game_jam_ludum_dare_piano_nocturne_BASE="game jam ludum dare piano nocturne BASE";
+	public static string game_jam_ludum_dare_piano_nocturne_HORROR_v2="game jam ludum dare piano nocturne HORROR_v2";
+	public static string piano_cello_nocturne_child_BASE="piano-cello nocturne_child_BASE";
+	public static string piano_cello_nocturne_child_HORROR="piano-cello nocturne_child_HORROR";
+	public static string piano_cello_nocturne_grandma_base="piano-cello nocturne_grandma_base";
+	public static string piano_cello_nocturne_grandma_HORROR="piano-cello nocturne_grandma_HORROR";
+	public static string piano_strings_noct_sibling_BASE="piano-strings noct_sibling_BASE";
+	public static string piano_strings_noct_sibling_HORROR="piano-strings noct_sibling_HORROR";
+	public static string cabinet_closing="cabinet closing";
+	public static string cabinet_opening="cabinet opening";
+	public static string drawer_closing="drawer closing";
+	public static string drawer_opening="drawer opening";
+	public static string fire_burst="fire burst";
+	public static string Fire_Starting="Fire Starting";
+	public static string item_pick_up="item pick up";
+	public static string keys_picked_up="keys picked up";
+	public static string keys_unlock="keys unlock";
+	public static string light_switch_off="light switch off";
+	public static string light_switch_on="light switch on";
+	public static string picture_fading="picture fading";
+	public static string start_game="start game";
 }

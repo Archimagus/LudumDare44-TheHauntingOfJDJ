@@ -1,6 +1,9 @@
-﻿using System.Collections;
+﻿using DG.Tweening;
+using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AudioEvent : MonoBehaviour
 {
@@ -23,11 +26,15 @@ public class AudioEvent : MonoBehaviour
 
 	public void PlaySound (AudioClip clip)
 	{
-		AudioManager.PlaySound(this, clip, SoundType.SoundEffect, this.transform.position);
+		AudioManager.PlaySound(this, clip);
 	}
 
-	public void PlayStinger (AudioClip clip)
+	HashSet<AudioClip> _playedVoiceOvers = new HashSet<AudioClip>();
+	public void PlayMemoryVo(bool canRepeat)
 	{
-		AudioManager.PlaySound(this, clip, SoundType.Dialogue);
+		if(_playedVoiceOvers.Add(Memory.CurrentMemory.VoiceOver) || canRepeat)
+		{
+			AudioManager.PlaySound(this, Memory.CurrentMemory.VoiceOver);
+		}
 	}
 }

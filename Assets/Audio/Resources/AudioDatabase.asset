@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: AudioDatabase
   m_EditorClassIdentifier: 
   _audioClips: []
+  _clipNames: []
   _clipTypes: 

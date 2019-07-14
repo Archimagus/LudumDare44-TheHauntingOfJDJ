@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: eada9aa2ed8e8d447bc8bc0789ae11ea
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - BaseMusic: {instanceID: 0}
+  - WarpedMusic: {instanceID: 0}
+  - MemoryStartedEvent: {fileID: 11400000, guid: ad3a84d63d231b0429054169be64c106,
+      type: 2}
+  - MemoryLeftEvent: {fileID: 11400000, guid: 13d6dedba373b6c48ba4b0d5c69ab9ed, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
